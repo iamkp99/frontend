@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <style> 
+        h1 { 
+            color:Green; 
+        } 
+        div.memes { 
+            margin:5px; 
+            padding:5px; 
+            
+            width: justify; 
+            height: 300px; 
+            overflow: auto; 
+            text-align:justify; 
+        } 
+    </style> 
+
+    
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+    <form action="/memes" method="POST">
+        Meme Owner <input type="text" placeholder="name" name="name"><br><br>
+        Caption <input type="text" placeholder="caption" name="caption"><br><br>
+        Meme URL <input type="text" placeholder="url" name="url"><br><br>
+        <button type="submit">Submit</button>
+      </form>
+
+    
+
+      <h2> Memes </h2>
+      <div class="memes">
+      <ul class="meme">
+        <!-- Loop through quotes -->
+        <% for(var i = 0; i < result.length; i++) {%>
+          <li class="quote">
+            <!-- Output name from the iterated quote object -->
+            <span><%= result[i].name %></span>
+            <br>
+            <!-- Output quote from the iterated quote object -->
+            <span><%= result[i].caption %></span>
+            <br>
+            <img src=<%=result[i].url%>> 
+          </li>
+        <% } %>
+      </ul>
+    </div>  
+      
+      
+</body>
+</html>
